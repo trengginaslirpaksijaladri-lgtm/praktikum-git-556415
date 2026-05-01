@@ -156,7 +156,6 @@ Konflik terjadi karena kedua branch mengubah baris CSS yang sama dengan nilai ya
 
 **4. Menyelesaikan Konflik di VS Code**  
 VS Code menampilkan marker konflik sebagai berikut:
-<<<<<<< HEAD
 background-color: #e74c3c;
 background-color: #8e44ad;
 
