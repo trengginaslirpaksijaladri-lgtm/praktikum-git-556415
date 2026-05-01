@@ -1,8 +1,8 @@
 # Laporan Praktikum Git & GitHub
 **Nama:** Trengginas Lir  
 **NIM:** 25/556415/SV/25930  
-**Kelas** A2 
-**Mata Kuliah:** Praktikum Pemrograman Web 1
+**Kelas:** A2  
+**Mata Kuliah:** Praktikum Pemrograman Web 1  
 **Dosen Pembimbing:** Dinar Nugroho Pratomo, S.Kom., M.IM., M.Cs.
 
 ---
@@ -38,7 +38,6 @@ Pertama-tama, membuat repository baru di GitHub dengan nama `praktikum-git-55641
 **2. Melakukan Clone Repository**  
 Setelah repository dibuat, dilakukan proses clone ke komputer lokal menggunakan perintah berikut:
 git clone https://github.com/trengginaslirpaksijaladri-lgtm/praktikum-git-556415.git
-
 Perintah `git clone` berfungsi untuk menyalin seluruh isi repository dari GitHub ke komputer lokal beserta history commitnya.
 
 **3. Membuat File index.html**  
@@ -49,7 +48,7 @@ Setiap perubahan pada file dicatat menggunakan perintah `git add` dan `git commi
 - `feat:` untuk penambahan fitur baru
 - `fix:` untuk perbaikan bug
 - `style:` untuk perubahan tampilan
-- `chore:` untuk tugas maintenance 
+- `chore:` untuk tugas maintenance
 
 Berikut adalah 5 commit yang dilakukan:
 feat: add initial HTML homepage
@@ -63,7 +62,6 @@ Membuat file `.gitignore` untuk mengecualikan file-file yang tidak perlu di-trac
 .DS_Store
 *.log
 node_modules/
-
 Kemudian melakukan commit dengan pesan `chore: add gitignore`.
 
 **6. Melakukan Push ke GitHub**  
@@ -95,13 +93,11 @@ git push origin feature/navbar
 **2. Membuat Branch `feature/footer`**  
 Kembali ke branch main terlebih dahulu menggunakan `git checkout main`, kemudian membuat branch baru untuk menambahkan footer:
 git checkout -b feature/footer
-
 Menambahkan elemen `<footer>` berisi informasi kontak pada `index.html`, kemudian melakukan commit dan push ke GitHub.
 
 **3. Membuat Branch `hotfix/typo`**  
 Membuat branch khusus untuk memperbaiki typo pada halaman utama:
 git checkout -b hotfix/typo
-
 Memperbaiki typo pada heading, kemudian melakukan commit dengan pesan `fix: correct typo in homepage heading` dan push ke GitHub.
 
 **4. Membuat Pull Request**  
@@ -109,6 +105,9 @@ Untuk setiap branch, dibuat Pull Request di GitHub dengan melengkapi:
 - **Judul** yang deskriptif sesuai perubahan
 - **Deskripsi** yang menjelaskan apa yang diubah
 - **Label** yang sesuai (`enhancement` untuk feature, `bug` untuk hotfix)
+
+### Screenshot Pull Request
+![PR List](pr-list.png)
 
 **5. Melakukan Merge**  
 Strategi merge yang digunakan berbeda untuk setiap jenis branch:
@@ -127,6 +126,7 @@ Dengan aturan ini, tidak ada yang dapat melakukan push langsung ke branch `main`
 ### Screenshot Branch Protection
 ![Branch Protection](branch-protection.png)
 
+---
 
 ## Tugas 3 - Konflik & Rebase
 
@@ -136,12 +136,12 @@ Memahami cara menangani konflik merge secara manual di VS Code serta menggunakan
 ### Langkah-langkah Simulasi Konflik
 
 **1. Membuat Dua Branch dengan Perubahan yang Sama**  
-Membuat branch `experiment/color-C` dari main: git checkout -b experiment/color-C
-
+Membuat branch `experiment/color-C` dari main:
+git checkout -b experiment/color-C
 Mengubah nilai `background-color` pada `body` di CSS menjadi `#e74c3c` (merah gelap), kemudian melakukan commit dan push.
 
-Kembali ke main, lalu membuat branch `experiment/color-D`: git checkout -b experiment/color-D
-
+Kembali ke main, lalu membuat branch `experiment/color-D`:
+git checkout -b experiment/color-D
 Mengubah baris CSS yang sama dengan nilai berbeda yaitu `#8e44ad` (ungu), kemudian melakukan commit dan push.
 
 **2. Melakukan Merge Branch Pertama**  
@@ -152,15 +152,26 @@ Setelah branch C berhasil di-merge, dilakukan merge branch `experiment/color-D` 
 git checkout main
 git pull origin main
 git merge experiment/color-D
-
 Konflik terjadi karena kedua branch mengubah baris CSS yang sama dengan nilai yang berbeda.
 
 **4. Menyelesaikan Konflik di VS Code**  
 VS Code menampilkan marker konflik sebagai berikut:
-<<<<<<< HEAD
 background-color: #e74c3c;
 background-color: #8e44ad;
+
+
+
+
+
+
+
 experiment/color-D
+
+
+
+
+
+
 
 Konflik diselesaikan secara manual dengan memilih **Accept Incoming Change** untuk menggunakan warna ungu (`#8e44ad`). Setelah konflik diselesaikan, dilakukan commit:
 git add .
@@ -194,6 +205,7 @@ Setelah rebase selesai, melakukan push ke GitHub dan membuat Pull Request untuk 
 ### Screenshot Rebase
 ![Rebase](rebase.png)
 
+---
 
 ## Tugas 4 - Dokumentasi & Invite
 
@@ -213,11 +225,17 @@ Membuat 3 Issues di GitHub:
 
 Setiap issue ditutup dengan Pull Request yang menyertakan kata kunci `Closes #nomor` pada deskripsi PR, sehingga issue otomatis tertutup saat PR di-merge.
 
+### Screenshot Issues
+![Issues](issues.png)
+
 **3. Mengundang Collaborator**  
 Mengundang dosen dan asisten sebagai collaborator melalui Settings → Collaborators → Add people:
-Pak Dinar: dinarnp
-Edi: prasetyoedi
-Rizky: rizkyoktarinanto
+- Dosen: `dinarnp`
+- Asisten 1: `prasetyoedi`
+- Asisten 2: `rizkyoktarinanto`
+
+### Screenshot Collaborator
+![Collaborator](collaborator.png)
 
 **4. Membuat Release v1.0.0**  
 Membuat Release pertama di GitHub melalui Releases → Draft a new release dengan:
@@ -225,6 +243,10 @@ Membuat Release pertama di GitHub melalui Releases → Draft a new release denga
 - Title: `Release v1.0.0`
 - Changelog berisi daftar semua fitur yang telah dikembangkan
 
+### Screenshot Release
+![Release](release.png)
+
+---
 
 ## Dokumentasi Perintah Git
 
@@ -281,3 +303,7 @@ Digunakan untuk mengatur identitas pengguna Git secara global. Identitas ini aka
 git config --global user.name "Trengginas Lir"
 git config --global user.email "trengginaslirpaksijaladri@mail.ugm.ac.id"
 
+---
+
+## Kesimpulan
+Melalui praktikum ini, telah dipelajari dan dipraktikkan penggunaan Git dan GitHub secara menyeluruh, meliputi inisialisasi repository, pengelolaan commit dengan Conventional Commits, branching dan pull request, penyelesaian konflik merge secara manual, serta penggunaan interactive rebase untuk merapikan history commit. Seluruh konsep tersebut merupakan dasar yang sangat penting dalam pengembangan perangkat lunak secara kolaboratif dan profesional.
