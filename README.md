@@ -12,3 +12,6 @@ Website portofolio sederhana sebagai bahan praktikum Git & GitHub.
 
 ## Screenshot Git Log 
 ![Git log](gitlog.png)
+
+## Screenshot Branch Protection
+![Branch Protection](branch-protection.png)
